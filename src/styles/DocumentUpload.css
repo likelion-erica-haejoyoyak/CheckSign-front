@@ -1,0 +1,85 @@
+.upload-area {
+  position: relative;
+  border: 2px dashed #ddd;
+  border-radius: 8px;
+  padding: 40px 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  background-color: #f9f9f9;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.upload-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.upload-text {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.upload-subtext {
+  font-size: 12px;
+  color: #666;
+}
+
+.document-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.close-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.upload-status {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  right: 8px;
+  background-color: rgba(0, 0, 0, 0.11);
+  color: black;
+  padding: 8px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.upload-success {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background-color: rgba(0, 213, 0, 0.1);
+  color: black;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.upload-error {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  right: 8px;
+  background-color: rgba(255, 68, 68, 0.8);
+  color: white;
+  padding: 8px;
+  border-radius: 4px;
+  font-size: 12px;
+}
