@@ -27,4 +27,4 @@ jobs:
         port: ${{ secrets.PORT }}
         key: ${{ secrets.DEPLOY_KEY }}
         source: "build/*"
-        target: "/var/www/html/likelion/checksign/build"
+        target: "/var/www/html/likelion/checksign"
