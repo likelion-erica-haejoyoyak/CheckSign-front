@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = 'https://pi4.pbj.kr/likelion/api';
+const BASE_URL = 'https://checksign-api.pdj.kr';
 
 // API 엔드포인트 정의
 const API_ENDPOINTS = {
