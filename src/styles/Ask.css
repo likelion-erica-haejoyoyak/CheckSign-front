@@ -1,0 +1,117 @@
+.ask-page {
+  background: #fff;
+  max-width: 480px;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px 20px;
+  font-family: 'Pretendard', sans-serif;
+  box-sizing: border-box;
+}
+
+/* 헤더 영역 */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid #eee;
+  background-color: #fff;
+}
+
+.back-button {
+  font-size: 22px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px 8px;
+}
+
+.header-title {
+  font-weight: 600;
+  font-size: 16px;
+  color: #333;
+}
+
+.profile-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #ccc;
+}
+
+/* 챗봇 라벨 */
+.ai-label {
+  text-align: center;
+  margin-top: 32px;
+  margin-bottom: 20px;
+  color: #666;
+}
+
+.ai-icon {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.ai-title {
+  font-weight: bold;
+  font-size: 18px;
+  color: #333;
+}
+
+.ai-subtitle {
+  font-size: 14px;
+  margin-top: 6px;
+}
+
+/* 예시 질문 카드 */
+.example-questions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: auto;
+}
+
+.question-card {
+  background: #e6f9e6;
+  color: #333;
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-size: 14px;
+  width: 45%;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.question-card:hover {
+  background: #d2f4d2;
+}
+
+/* 질문 입력창 */
+.question-input-container {
+  display: flex;
+  padding: 12px 16px;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+  margin-top: auto;
+  margin-bottom: 10px;
+}
+
+.question-input-container input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
+
+.send-button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  margin-left: 10px;
+  color: #32cd32;
+  cursor: pointer;
+}

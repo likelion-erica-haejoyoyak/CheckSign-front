@@ -21,6 +21,10 @@ const Home = () => {
     navigate('/consult');
   };
 
+  const handleChatClick = () => {
+    navigate('/ask');
+  };
+ 
   return (
     <div className="home-container">
       <div className="app-header">
@@ -52,11 +56,11 @@ const Home = () => {
       </div>
 
       <div className="option-cards">
-        <div className="option-card consult-card" onClick={handleConsultClick}>
+        <div className="option-card consult-card touch-effect" onClick={handleConsultClick}>
           <h3 className="option-title">상담 요청</h3>
           <p className="option-description">법률 전문가 1:1 연결</p>
         </div>
-        <div className="option-card history-card" onClick={handleHistoryClick}>
+        <div className="option-card history-card touch-effect" onClick={handleHistoryClick}>
           <h3 className="option-title">히스토리</h3>
           <p className="option-description">지난 분석 내역 보기</p>
         </div>
@@ -64,11 +68,14 @@ const Home = () => {
 
       <div className="chat-section">
         <p className="chat-title">법률 AI 챗봇에게 질문하기</p>
-        <div className="chat-input-container">
+        
+        {/*전체 상자 클릭시 /ask 페이지로 이동*/}
+        <div className="chat-input-container" onClick={handleChatClick}>
           <input
             type="text"
             className="chat-input"
             placeholder="무엇이든 물어보세요..."
+            readOnly
           />
           <button className="send-button">
             <span className="send-icon">↑</span>

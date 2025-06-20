@@ -219,3 +219,9 @@
 .send-icon {
   font-weight: bold;
 }
+
+/*드래그 기능 막기*/
+.chat-input {
+  cursor: pointer;
+  user-select: nones;
+}

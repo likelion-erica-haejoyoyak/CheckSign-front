@@ -114,3 +114,19 @@
   border-top: 1px solid #eee;
   z-index: 10;
 }
+
+/* 공통 터치/호버 효과 */
+.touch-effect {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  will-change: transform;
+}
+
+.touch-effect:hover {
+  transform: translateY(-4px); /* 마우스 올리면 살짝 위로 */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08); /* 살짝 떠 있는 그림자 */
+}
+
+.touch-effect:active {
+  transform: scale(0.96); /* 누르면 살짝 눌림 */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06); /* 눌렸을 때 그림자 약하게 */
+}
