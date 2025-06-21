@@ -111,10 +111,10 @@ const SharedResult = () => {
                   <h4 className="card-title">⚠️ 위험 등급</h4>
                   <div className="card-content grade-display">
                     <div className={`grade-badge grade-${result.risk_grade}`}>
-                      {result.risk_grade === 1 && '낮음'}
-                      {result.risk_grade === 2 && '보통'}
-                      {result.risk_grade === 3 && '높음'}
-                      {result.risk_grade === 4 && '매우 높음'}
+                      {result.risk_grade === 1 && '안전'}
+                      {result.risk_grade === 2 && '낮음'}
+                      {result.risk_grade === 3 && '보통'}
+                      {result.risk_grade === 4 && '높음'}
                       {result.risk_grade === 5 && '위험'}
                     </div>
                     <div className="grade-score">
