@@ -167,7 +167,9 @@ const DocumentUpload = () => {
 
   return (
     <div className="container">
-      <div className="header">문서 추가</div>
+      <div className="header">
+        <span className="header-title">문서 추가</span>
+      </div>
       
       <div className="content">
         <div 

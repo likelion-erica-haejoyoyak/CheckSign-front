@@ -20,10 +20,21 @@ const AnalysisResult = () => {
   const fetchAnalysisResult = async (imageId) => {
     try {
       const data = await getAnalysisResult(imageId);
-      
-      if (data.status === 'completed') {
+        if (data.status === 'completed') {
         setResult(data.result);
         setLoading(false);
+        
+        // Save to localStorage for history
+        const historyItem = {
+          id: imageId,
+          result: data.result,
+          timestamp: new Date().toISOString(),
+          imageId: imageId
+        };
+        
+        const existingHistory = JSON.parse(localStorage.getItem('analysisHistory') || '[]');
+        const updatedHistory = [historyItem, ...existingHistory.filter(item => item.id !== imageId)];
+        localStorage.setItem('analysisHistory', JSON.stringify(updatedHistory.slice(0, 20))); // Keep only last 20 items
       } else if (data.status === 'failed') {
         setError(data.error_message || '분석이 실패했습니다.');
         setLoading(false);
@@ -96,7 +107,9 @@ const AnalysisResult = () => {
 
   return (
     <div className="container">
-      <div className="header">분석 결과</div>
+      <div className="header">
+        <span className="header-title">분석 결과</span>
+      </div>
       
       <div className="content">
         <div className="scrollable-content">

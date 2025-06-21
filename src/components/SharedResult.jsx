@@ -56,7 +56,9 @@ const SharedResult = () => {
 
   return (
     <div className="container">
-      <div className="header">공유된 분석 결과</div>
+      <div className="header">
+        <span className="header-title">공유된 분석 결과</span>
+      </div>
       
       <div className="content">
         <div className="scrollable-content">

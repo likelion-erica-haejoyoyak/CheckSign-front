@@ -1,47 +1,16 @@
 .ask-page {
   background: #fff;
-  max-width: 480px;
+  max-width: 500px;
   margin: 0 auto;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  padding: 0 20px 20px;
+  padding: 16px;
   font-family: 'Pretendard', sans-serif;
   box-sizing: border-box;
 }
 
-/* 헤더 영역 */
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px 0;
-  border-bottom: 1px solid #eee;
-  background-color: #fff;
-}
-
-.back-button {
-  font-size: 22px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 4px 8px;
-}
-
-.header-title {
-  font-weight: 600;
-  font-size: 16px;
-  color: #333;
-}
-
-.profile-icon {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background-color: #ccc;
-}
-
-/* 챗봇 라벨 */
+/* 예시 질문 카드 */
 .ai-label {
   text-align: center;
   margin-top: 32px;

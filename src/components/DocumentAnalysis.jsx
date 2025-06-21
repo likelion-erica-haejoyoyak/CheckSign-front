@@ -85,7 +85,9 @@ const DocumentAnalysis = () => {
   if (analysisStage === 'requesting' || analysisStage === 'scanning') {
     return (
       <div className="container">
-        <div className="header">문서 스캔</div>
+        <div className="header">
+          <span className="header-title">문서 스캔</span>
+        </div>
         
         <div className="content">
           <div className="document-preview">
