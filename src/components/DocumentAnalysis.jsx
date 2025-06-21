@@ -3,6 +3,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { requestAnalysis, getAnalysisResult, getImageUrl } from '../api/api';
 import '../styles/common.css';
 import '../styles/DocumentAnalysis.css';
+import '../styles/AnalysisResult.css';
 
 const DocumentAnalysis = () => {
   useEffect(() => { document.title = '문서 분석 - 체크사인'; }, []);

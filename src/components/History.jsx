@@ -35,6 +35,27 @@ const HistoryPage = () => {
 
   const getPreviewText = (text, maxLength = 100) => {
     if (!text) return '';
+    
+    // JSON 객체인 경우 처리
+    if (typeof text === 'object') {
+      try {
+        // overview 필드가 있으면 우선 사용
+        if (text.overview) {
+          return text.overview.length > maxLength 
+            ? text.overview.substring(0, maxLength) + '...' 
+            : text.overview;
+        }
+        // 객체를 문자열로 변환
+        const jsonString = JSON.stringify(text).replace(/[{}"]/g, '');
+        return jsonString.length > maxLength 
+          ? jsonString.substring(0, maxLength) + '...' 
+          : jsonString;
+      } catch (error) {
+        return '결과 미리보기 불가';
+      }
+    }
+    
+    // 문자열인 경우 기존 로직 적용
     return text.length > maxLength ? text.substring(0, maxLength) + '...' : text;
   };
 
@@ -109,7 +130,11 @@ const HistoryPage = () => {
                     </div>
                     
                     <div className="history-preview">
-                      {getPreviewText(item.result)}
+                      {typeof item.result === 'string' ? (
+                        <span dangerouslySetInnerHTML={{ __html: getPreviewText(item.result) }}></span>
+                      ) : (
+                        <span dangerouslySetInnerHTML={{ __html: getPreviewText(item.result || {}) }}></span>
+                      )}
                     </div>
                   </div>
                   

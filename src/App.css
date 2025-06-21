@@ -157,13 +157,6 @@ body {
   gap: 4px;
 }
 
-.document-image {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin-bottom: 16px;
-}
-
 .analysis-status {
   text-align: center;
   margin: 40px 0;

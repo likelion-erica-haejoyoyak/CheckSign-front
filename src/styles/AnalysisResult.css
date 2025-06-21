@@ -12,7 +12,7 @@
 
 .document-image {
   max-width: 100%;
-  max-height: 200px;
+  max-height: 60dvh;
   object-fit: contain;
   background-color: #f0f0f0;
   border-radius: 8px;
@@ -31,6 +31,10 @@
 .result-title {
   margin-bottom: 16px;
   color: #2196F3;
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  color: #333;
 }
 
 .result-content {
@@ -43,6 +47,28 @@
   font-size: 14px;
 }
 
+.result-card {
+  background-color: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0 0 16px 0;
+  color: #333;
+}
+
+.card-content {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #444;
+}
+
 .result-disclaimer {
   margin-top: 16px;
   padding: 12px;
@@ -51,6 +77,12 @@
   font-size: 12px;
   color: #1976d2;
   text-align: center;
+  background-color: #f8f9fa;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #666;
+  margin-top: 8px;
 }
 
 .loading-container {
@@ -108,4 +140,81 @@
   font-size: 12px;
   word-break: break-all;
   color: #495057;
+}
+
+/* Risk Grade Styles */
+.risk-grade {
+  border-left: 4px solid #3498db;
+}
+
+.grade-display {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.grade-badge {
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 20px;
+  text-align: center;
+  min-width: 80px;
+}
+
+.grade-1 {
+  background-color: #ebffeb;
+  color: #27ae60;
+}
+
+.grade-2 {
+  background-color: #eaf2ff;
+  color: #3498db;
+}
+
+.grade-3 {
+  background-color: #fff9e6;
+  color: #f39c12;
+}
+
+.grade-4 {
+  background-color: #fff0e6;
+  color: #e67e22;
+}
+
+.grade-5 {
+  background-color: #ffe6e6;
+  color: #e74c3c;
+}
+
+.grade-score {
+  font-size: 18px;
+  display: flex;
+  align-items: baseline;
+}
+
+.score-label {
+  font-size: 14px;
+  margin-right: 8px;
+  color: #666;
+}
+
+.score-value {
+  font-weight: bold;
+  font-size: 24px;
+  margin-right: 2px;
+  color: #333;
+}
+
+.score-total {
+  color: #888;
+  font-size: 16px;
+}
+
+/* Terms Guide Style */
+.terms-guide p {
+  margin: 8px 0;
+  padding: 0;
+  text-align: left;
+  font-size: 0.9em;
 }

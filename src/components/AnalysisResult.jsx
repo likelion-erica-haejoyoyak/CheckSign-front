@@ -7,7 +7,7 @@ import '../styles/AnalysisResult.css';
 const AnalysisResult = () => {
   useEffect(() => { document.title = '분석 결과 - 체크사인'; }, []);
   
-  const [result, setResult] = useState('');
+  const [result, setResult] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   const [showShareDialog, setShowShareDialog] = useState(false);
@@ -29,7 +29,9 @@ const AnalysisResult = () => {
           id: imageId,
           result: data.result,
           timestamp: new Date().toISOString(),
-          imageId: imageId
+          imageId: imageId,
+          request_time: data.request_time,
+          complete_time: data.complete_time
         };
         
         const existingHistory = JSON.parse(localStorage.getItem('analysisHistory') || '[]');
@@ -144,11 +146,43 @@ const AnalysisResult = () => {
             )}
 
             {!loading && result && (
-              <div>
+              <div className="result-dashboard">
                 <h3 className="result-title">📋 분석 결과</h3>
-                <div className="result-content">
-                  {result}
+                  <div className="result-card">
+                  <h4 className="card-title">💼 문서 개요</h4>
+                  <div 
+                    className="card-content"
+                    dangerouslySetInnerHTML={{ __html: result.overview }}
+                  />
                 </div>
+                
+                <div className="result-card risk-grade">
+                  <h4 className="card-title">⚠️ 위험 등급</h4>
+                  <div className="card-content grade-display">
+                    <div className={`grade-badge grade-${result.risk_grade}`}>
+                      {result.risk_grade === 1 && '낮음'}
+                      {result.risk_grade === 2 && '보통'}
+                      {result.risk_grade === 3 && '높음'}
+                      {result.risk_grade === 4 && '매우 높음'}
+                      {result.risk_grade === 5 && '위험'}
+                    </div>
+                    <div className="grade-score">
+                      <span className="score-label">총점</span>
+                      <span className="score-value">{result.total_score}</span>
+                      <span className="score-total">/100</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="result-card">
+                  <h4 className="card-title">📘 용어 설명</h4>
+                  <div className="card-content terms-guide">
+                    {result.terms_guide.split('\n').map((term, index) => (
+                      <p key={index} dangerouslySetInnerHTML={{ __html: term }} ></p>
+                    ))}
+                  </div>
+                </div>
+                
                 <div className="result-disclaimer">
                   💡 이 결과는 AI에 의해 생성되었으며, 실제 법률 검토를 대체할 수 없습니다.
                 </div>

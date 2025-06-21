@@ -3,11 +3,12 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { getAnalysisResult, getImageUrl } from '../api/api';
 import '../styles/common.css';
 import '../styles/SharedResult.css';
+import '../styles/AnalysisResult.css';
 
 const SharedResult = () => {
   useEffect(() => { document.title = '공유 분석 결과 - 체크사인'; }, []);
 
-  const [result, setResult] = useState('');
+  const [result, setResult] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   const { imageId } = useParams();
@@ -96,10 +97,41 @@ const SharedResult = () => {
             )}
 
             {!loading && result && (
-              <div>
+              <div className="result-dashboard">
                 <h3 className="result-title">📋 분석 결과</h3>
-                <div className="result-content">
-                  {result}
+                  <div className="result-card">
+                  <h4 className="card-title">💼 문서 개요</h4>
+                  <div 
+                    className="card-content"
+                    dangerouslySetInnerHTML={{ __html: result.overview }}
+                  />
+                </div>
+                
+                <div className="result-card risk-grade">
+                  <h4 className="card-title">⚠️ 위험 등급</h4>
+                  <div className="card-content grade-display">
+                    <div className={`grade-badge grade-${result.risk_grade}`}>
+                      {result.risk_grade === 1 && '낮음'}
+                      {result.risk_grade === 2 && '보통'}
+                      {result.risk_grade === 3 && '높음'}
+                      {result.risk_grade === 4 && '매우 높음'}
+                      {result.risk_grade === 5 && '위험'}
+                    </div>
+                    <div className="grade-score">
+                      <span className="score-label">총점</span>
+                      <span className="score-value">{result.total_score}</span>
+                      <span className="score-total">/100</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="result-card">
+                  <h4 className="card-title">📘 용어 설명</h4>
+                  <div className="card-content terms-guide">
+                    {result.terms_guide.split('\n').map((term, index) => (
+                      <p key={index} dangerouslySetInnerHTML={{ __html: term }} ></p>
+                    ))}
+                  </div>
                 </div>
                 
                 <div className="result-disclaimer">

@@ -86,7 +86,9 @@ export const getAnalysisResult = async (imageId) => {
       return {
         success: true,
         status: data.status,
-        result: data.result,
+        result: data.result, // 이제 result는 객체 형태
+        request_time: data.request_time,
+        complete_time: data.complete_time,
         error_message: data.error_message
       };
     } else {
