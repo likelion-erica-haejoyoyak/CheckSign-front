@@ -77,3 +77,18 @@ h2 {
 .answer {
   color: #444;
 }
+
+.back-button {
+  font-size: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  left: 0px;
+}
+
+.header-with-back {
+  position: relative;
+  padding-top: 20px;
+}

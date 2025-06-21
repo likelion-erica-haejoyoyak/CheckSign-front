@@ -14,7 +14,11 @@ const ConsultPage = () => {
 
   return (
     <div className="consult-page">
-      <h2>🍀 상담 요청</h2>
+      <div className="header-with-back">
+        <button className="back-button" onClick={() => window.history.back()}>←</button>
+        <h2>🍀 상담 요청</h2>
+      </div>
+
       <p className="subtext">전문가와 1:1 상담을 원하시면 아래 내용을 작성해 주세요.</p>
 
       <form onSubmit={handleSubmit} className="consult-form">
