@@ -27,35 +27,39 @@ const AskPage = () => {
         <div className="profile-icon" />
       </div>
 
-      <div className="ai-label">
-        <div className="ai-icon">🍀</div>
-        <div className="ai-title">계약서 관련 궁금한 점</div>
-        <div className="ai-subtitle">자유롭게 물어보세요</div>
-      </div>
+      <div className="content">
 
-      <div className="example-questions">
-        {exampleQuestions.map((q, idx) => (
-          <div
-            key={idx}
-            className="question-card"
-            onClick={() => setQuestion(q.text)}
-          >
-            <strong>{q.subject}</strong><br />
-            {q.text}
-          </div>
-        ))}
-      </div>
+        <div className="ai-label">
+          <div className="ai-icon">🍀</div>
+          <div className="ai-title">계약서 관련 궁금한 점</div>
+          <div className="ai-subtitle">자유롭게 물어보세요</div>
+        </div>
 
-      <div className="question-input-container">
-        <input
-          type="text"
-          placeholder="질문을 입력해 주세요."
-          value={question}
-          onChange={(e) => setQuestion(e.target.value)}
-        />
-        <button className="send-button" onClick={handleSend}>
-          <span className="send-icon">↑</span>
-        </button>
+        <div className="example-questions">
+          {exampleQuestions.map((q, idx) => (
+            <div
+              key={idx}
+              className="question-card"
+              onClick={() => setQuestion(q.text)}
+            >
+              <strong>{q.subject}</strong><br />
+              {q.text}
+            </div>
+          ))}
+        </div>
+
+        <div className="question-input-container">
+          <input
+            type="text"
+            placeholder="질문을 입력해 주세요."
+            value={question}
+            onChange={(e) => setQuestion(e.target.value)}
+          />
+          <button className="send-button" onClick={handleSend}>
+            <span className="send-icon">↑</span>
+          </button>
+        </div>
+
       </div>
     </div>
   );

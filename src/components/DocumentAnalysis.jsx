@@ -84,7 +84,7 @@ const DocumentAnalysis = () => {
 
   if (analysisStage === 'requesting' || analysisStage === 'scanning') {
     return (
-      <div className="container">
+      <div className="container upload-container">
         <div className="header">
           <span className="header-title">문서 스캔</span>
         </div>
@@ -144,8 +144,10 @@ const DocumentAnalysis = () => {
 
   if (analysisStage === 'failed') {
     return (
-      <div className="container">
-        <div className="header">문서 스캔</div>
+      <div className="container upload-container">
+        <div className="header">
+          <span className="header-title">문서 스캔</span>
+        </div>
         
         <div className="content">
           <div className="document-preview">
@@ -193,8 +195,10 @@ const DocumentAnalysis = () => {
   }
 
   return (
-    <div className="container">
-      <div className="header">문서 스캔</div>
+    <div className="container upload-container">
+      <div className="header">
+        <span className="header-title">문서 스캔</span>
+      </div>
       
       <div className="content">
         <div className="document-preview">

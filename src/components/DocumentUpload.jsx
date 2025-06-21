@@ -166,7 +166,7 @@ const DocumentUpload = () => {
   const currentFile = files[0];
 
   return (
-    <div className="container">
+    <div className="container upload-container">
       <div className="header">
         <span className="header-title">문서 추가</span>
       </div>

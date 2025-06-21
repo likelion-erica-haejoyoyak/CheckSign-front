@@ -5,7 +5,6 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  padding: 16px;
   font-family: 'Pretendard', sans-serif;
   box-sizing: border-box;
 }
@@ -61,12 +60,13 @@
 
 /* 질문 입력창 */
 .question-input-container {
-  display: flex;
-  padding: 12px 16px;
-  border-radius: 20px;
-  border: 1px solid #ddd;
-  margin-top: auto;
-  margin-bottom: 10px;
+    display: flex;
+    padding: 12px 16px;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+    /* margin-top: auto; */
+    margin: 14px;
+    margin-bottom: 32px;
 }
 
 .question-input-container input {

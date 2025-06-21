@@ -4,8 +4,6 @@
 .container {
   display: flex;
   flex-direction: column;
-  padding: 16px;
-  padding-top: 0;
   height: 100dvh;
   width: 100%;
   max-width: 500px;
@@ -42,6 +40,18 @@
   height: 40px;
   flex-shrink: 0;
 }
+
+/*
+.back-button {
+  font-size: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  left: 0px;
+}
+  */
 
 .back-button:hover {
   background-color: #f8f9fa;
