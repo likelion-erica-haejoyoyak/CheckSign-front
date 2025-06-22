@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = 'http://localhost:8080';
+const BASE_URL = 'https://checksign.pdj.kr';
 
 // API 엔드포인트 정의
 const API_ENDPOINTS = {
