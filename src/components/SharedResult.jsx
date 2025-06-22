@@ -18,14 +18,18 @@ const SharedResult = () => {
     try {
       const data = await getAnalysisResult(imageId);
       
-      if (data.status === 'completed') {
+      if (data.status === 'COMPLETED') {
         setResult(data.result);
         setLoading(false);
-      } else if (data.status === 'failed') {
+      } else if (data.status === 'FAILED') {
         setError('분석이 실패했습니다: ' + (data.error_message || '알 수 없는 오류'));
         setLoading(false);
-      } else if (data.status === 'pending') {
+      } else if (data.status === 'PENDING') {
         setError('분석이 아직 진행 중입니다. 잠시 후 다시 시도해주세요.');
+        setLoading(false);
+      } else {
+        // 혹시 모를 다른 상태 값에 대한 처리
+        setError('알 수 없는 분석 상태입니다: ' + data.status);
         setLoading(false);
       }
     } catch (error) {
@@ -42,6 +46,7 @@ const SharedResult = () => {
       setError('잘못된 공유 링크입니다.');
       setLoading(false);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [imageId]);
 
   const handleGoHome = () => {

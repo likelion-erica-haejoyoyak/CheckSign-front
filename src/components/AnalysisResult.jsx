@@ -20,7 +20,7 @@ const AnalysisResult = () => {
   const fetchAnalysisResult = async (imageId) => {
     try {
       const data = await getAnalysisResult(imageId);
-        if (data.status === 'completed') {
+        if (data.status === 'COMPLETED') {
         setResult(data.result);
         setLoading(false);
         
@@ -37,10 +37,10 @@ const AnalysisResult = () => {
         const existingHistory = JSON.parse(localStorage.getItem('analysisHistory') || '[]');
         const updatedHistory = [historyItem, ...existingHistory.filter(item => item.id !== imageId)];
         localStorage.setItem('analysisHistory', JSON.stringify(updatedHistory.slice(0, 20))); // Keep only last 20 items
-      } else if (data.status === 'failed') {
+      } else if (data.status === 'FAILED') {
         setError(data.error_message || '분석이 실패했습니다.');
         setLoading(false);
-      } else if (data.status === 'pending') {
+      } else if (data.status === 'PENDING') {
         // 3초 후 재확인
         setTimeout(() => {
           fetchAnalysisResult(imageId);
@@ -60,7 +60,7 @@ const AnalysisResult = () => {
       setError('분석 결과를 가져올 이미지를 찾을 수 없습니다.');
       setLoading(false);
     }
-  }, []);
+  }, [firstFile?.id]);
 
   const handleBack = () => {
     navigate(-1);

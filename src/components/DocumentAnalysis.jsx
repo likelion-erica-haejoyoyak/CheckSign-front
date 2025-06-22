@@ -35,12 +35,12 @@ const DocumentAnalysis = () => {
     try {
       const data = await getAnalysisResult(imageId);
       
-      if (data.status === 'completed') {
+      if (data.status === 'COMPLETED') {
         setAnalysisStage('completed');
-      } else if (data.status === 'failed') {
+      } else if (data.status === 'FAILED') {
         setError(data.error_message || '분석이 실패했습니다.');
         setAnalysisStage('failed');
-      } else if (data.status === 'pending') {
+      } else if (data.status === 'PENDING') {
         // 5초 후 재확인
         setTimeout(() => {
           checkAnalysisResult(imageId);
